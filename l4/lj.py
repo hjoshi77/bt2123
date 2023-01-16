@@ -5,7 +5,7 @@ fig,ax = plt.subplots()
 kB = 1.381e-23
 
 # The Lennard-Jones parameters:
-A = 1.024e-23   # J.nm^6
+A = 5.024e-23   # J.nm^6
 B = 1.582e-26   # J.nm^12
 
 # Adjust the units of A and B - they have more manageable values
@@ -20,13 +20,13 @@ U = B/r**12 - A/r**6
 F = 12*B/r**13 - 6*A/r**7
 
 line1 = plt.plot(r, U, 'k', lw=2, label=r'U(r)')
-plt.xlim(0.3, 0.8)
-plt.ylim(-150, 100)
+#plt.xlim(0.3, 0.8)
+#plt.ylim(-150, 100)
 
 plt.twinx()
 line2 = plt.plot(r, F, 'k', ls=':', lw=2, label=r'F(r)')
-plt.xlim(0.3, 0.8)
-plt.ylim(-1000, 1000)
+#plt.xlim(0.3, 0.8)
+#plt.ylim(-1000, 1000)
 
 # Jump through some hoops to get the both line's labels in the same legend:
 lines = line1 + line2
